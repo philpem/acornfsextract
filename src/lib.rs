@@ -35,6 +35,9 @@ mod dfs_reference_media_tests;
 mod solidisk_reference_media_tests;
 
 #[cfg(test)]
+mod watford_synthetic_tests;
+
+#[cfg(test)]
 mod oldmap_hard_disc_tests;
 
 #[cfg(test)]

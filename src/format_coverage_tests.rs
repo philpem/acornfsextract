@@ -232,7 +232,7 @@ fn dfs_matrix() -> Vec<Cell> {
             id: "dfs/watford-62",
             status: Status::RuntimeReal,
             fixture: None,
-            test: "external target (BGAME1_A.BBC, genuine Watford 62-file disc) + testutil::watford_extension_beyond_declared_total_is_extracted (regression for the total_sectors/image-size divergence bug)",
+            test: "external target (BGAME1_A.BBC, genuine Watford 62-file disc) + testutil::watford_extension_beyond_declared_total_is_extracted + watford_synthetic_tests (DSD extensions on both sides, full catalogues, track-crossing extraction, INF metadata, divergent declared size)",
         },
         Cell {
             id: "dfs/solidisk",

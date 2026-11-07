@@ -78,11 +78,21 @@ Columns: **vendor** × **geometry** (SSD/DSD, 40/80 trk, sect/trk) × **catalogu
 |------|--------|----------|--------|----------------|
 | Acorn DFS SSD | Acorn | single-sided | `real` | `data/apd01_ssd.ssd.gz` (`dfs_reference_media_tests`) |
 | Acorn DFS DSD | Acorn | double-sided interleaved | `real` | `data/8bs0_dsd.dsd.gz` (`dfs_reference_media_tests`) |
-| Watford 62-file extension | Watford | SSD or DSD | `real (runtime)` | `BGAME1_A.BBC` (genuine 41-entry Watford disc) + synthetic regression for the total_sectors/image-size divergence bug |
+| Watford 62-file extension | Watford | SSD or DSD | `real (runtime)` | `BGAME1_A.BBC` (genuine 41-entry Watford disc) + synthetic size-divergence regression and `watford_synthetic_tests` (DSD extensions, full catalogues, track-crossing reads and `.inf` metadata) |
 | Solidisk / Opus catalogue | Solidisk/Opus | — | `real` | `data/solidisk_utils_side_a.ssd.gz` (real Solidisk DDFS utilities disc) + synthetic/Eagle_Empire external; DDFS is a density enhancement, not a layout change |
 | HADFS (Harston) | HADFS | — | `real (runtime)` | mdfs.net `Software/HADFS/System.ssd` (unsupported variant; must not crash on DFS detection) |
 | dir-char / locked attributes on real media | any | — | `real` | `data/apd01_ssd.ssd.gz` (G/U dir chars) |
 | Catalogue bounds / broken entry | any | — | `synthetic` | `scenario_tests` |
+
+`watford_synthetic_tests` preserves structural observations from a locally
+inspected Watford DSD: independent 36/33-entry catalogues, an untitled second
+side, extension files beyond side 0's declared size, and track-crossing data.
+It also tests full 62-entry catalogues on both sides. Every image byte is
+generated in memory, with invented filenames, metadata and payloads; the
+tests contain no original file data or PII and need no external image.
+Track placement and catalogue encoding are independent of the reader's
+geometry helpers. These tests add synthetic evidence; the real-media status
+still comes from the optional external fixture.
 
 ## External real-disc validation (opt-in)
 
