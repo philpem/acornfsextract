@@ -20,6 +20,7 @@ use crate::model::riscos_time::RiscOsTimestamp;
 /// authoring workflow (a passage from Shakespeare's *Romeo and Juliet*, which
 /// is in the public domain). Committed fixtures must be freely distributable,
 /// so this is the kind of content the plugin-generated/authoring discs use.
+#[allow(dead_code)]
 const PUBDOM_PROSE: &str = "\
 But soft, what light through yonder window breaks?
 It is the east, and Juliet is the sun.

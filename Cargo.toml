@@ -20,6 +20,17 @@ serde_json = "1.0.151"
 thiserror = "2.0.19"
 winnow = "1.0.4"
 
+# The differential harness (tests/differential.rs) pit our reader against an
+# INDEPENDENT second Acorn-disc reader, ejmount/acorn-dfs. It is opt-in via
+# `--features differential` so a default `cargo test` never needs to fetch a
+# git dependency (and network) just to run the always-on suite.
+[features]
+differential = ["dep:acorn-dfs"]
+
+[dependencies.acorn-dfs]
+git = "https://github.com/ejmount/acorn-dfs"
+optional = true
+
 [dev-dependencies]
 tempfile = "3.27.0"
 flate2 = "1.0"

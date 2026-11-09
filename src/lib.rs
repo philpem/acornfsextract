@@ -10,7 +10,6 @@ pub mod util;
 pub mod verify;
 pub mod xlate;
 
-#[cfg(test)]
 pub mod testutil;
 
 #[cfg(test)]

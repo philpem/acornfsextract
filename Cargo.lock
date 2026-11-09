@@ -3,6 +3,19 @@
 version = 4
 
 [[package]]
+name = "acorn-dfs"
+version = "0.1.0"
+source = "git+https://github.com/ejmount/acorn-dfs#8fc02e1d7f74790d0634b373c72695b2d982cf51"
+dependencies = [
+ "arrayvec",
+ "bitflags",
+ "serde",
+ "serde_json",
+ "thiserror",
+ "winnow",
+]
+
+[[package]]
 name = "adler2"
 version = "2.0.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -77,6 +90,12 @@ checksum = "c3d036a3c4ab069c7b410a2ce876bd74808d2d0888a82667669f8e783a898bf1"
 dependencies = [
  "derive_arbitrary",
 ]
+
+[[package]]
+name = "arrayvec"
+version = "0.7.8"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "d3fb67a6e08acf24fdeccbac2cb6ac4305825bd1f117462e0e6f2f193345ad56"
 
 [[package]]
 name = "base64"
@@ -162,6 +181,7 @@ dependencies = [
 name = "cl-filecore-extract"
 version = "0.1.0"
 dependencies = [
+ "acorn-dfs",
  "clap",
  "crc32fast",
  "filetime",
